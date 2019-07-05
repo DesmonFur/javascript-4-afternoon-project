@@ -26,17 +26,29 @@
       - This returns a string equal to the employees first name + last name + the word widget
       - Example: "Dave Smith Widget"
 
-  Call your class Employee and receive all the data in the constructor in the order listed above.
+  Call your class Employee and receive all the data in the constructor in the order listed 
+  above.
 */
 
-//Code Here
+class Employee{
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name
+    this.last_name = last_name
+    this.email = email
+    this.age = age
+  } 
+  makeWidget(){
+    return `${this.first_name} ${this.last_name} Widget`
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
 
 /*
   Next, make a manager for Widget Co. that extends Employee
-  Each manager has all of the same properties as an employee with the following additional properties:
+  Each manager has all of the same properties as an employee with the following additional 
+  properties:
     - reports (other employees) that defaults to an empty array
   Each manager has the following additional methods:
     - hire (employee)
@@ -47,14 +59,31 @@
   Call your new class Manager
 */
 
-//Code Here
+class Manager extends Employee{
+  constructor(first_name, last_name, email, age, reports){
+      {
+        super(first_name, last_name, email, age)
+        this.reports = []
+      }
+      {
+       this.hire = function hire(employee){
+           return  this.reports.push(employee)
+        }
+
+        this.fire = function fire(index){
+             this.reports.splice(index, 1)
+        }
+      }
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
 
 /*
   Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
-  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
+  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a 
+  manager with the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
@@ -71,8 +100,17 @@
   Call your new class ProgressiveManager
 */
 
-//Code Here
-
+class ProgressiveManager extends Manager{
+  constructor(first_name, last_name, email, age, reports, title, bonus){
+    super(first_name,last_name,email,age,reports)
+    this.title = 'Not a manager'
+    this.bonus = 0
+    {
+      if(reports.length){
+    
+      }
+    }
+}
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
