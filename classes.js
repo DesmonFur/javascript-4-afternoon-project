@@ -67,7 +67,7 @@ class Manager extends Employee{
       }
       {
        this.hire = function hire(employee){
-           return  this.reports.push(employee)
+             this.reports.push(employee)
         }
 
         this.fire = function fire(index){
@@ -106,22 +106,22 @@ class ProgressiveManager extends Manager{
     super(first_name,last_name,email,age,reports)
     this.title = 'Not a manager'
     this.bonus = 0
-    this.hire = hire
   }
   function hire(employee) {
-  if(this.reports.length < 0) {
+    this.reports.push(employee)
+  if(this.reports.length) {
     this.title = 'Not a manager'
   }  
-  if(this.reports.length <= 1 && this.reports.length >= 3){
+  if(this.reports.length === 1 && this.reports.length <= 3){
     this.title = 'Barely Manager' 
   } 
-   if(this.reports.length >= 4 && this.reports.length <= 10){
+   if(this.reports.length === 4 && this.reports.length <= 10){
     this.title = 'Mostly Manager'
   }
-   if(this.reports.length >= 11 && this.reports.length <= 50){
+   if(this.reports.length === 11 && this.reports.length <= 50){
     this.title = 'Manager'
   }
-   if (this.reports.length >= 51 && this.reports.length <= 100) {
+   if (this.reports.length === 51 && this.reports.length <= 100) {
   this.title =  'Manager Plus'
   }
    if (this.reports.length >= 101){
